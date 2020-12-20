@@ -1,0 +1,5 @@
+
+Updates to track:
+-Changed form. May not be ready to push yet
+-started building form submission landing page.
+-building hikes landing page...building css template for hike pics page
