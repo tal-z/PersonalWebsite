@@ -1,5 +1,5 @@
 # PersonalWebsite
-This repo holds the files for my personal website. 
+This repo held the files for my personal website. It is woefully out of date.
 ## https://talzaken.pythonanywhere.com
 Built with flask.
 
