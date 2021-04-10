@@ -249,10 +249,10 @@ def bot_write():
             return (author, re.sub(r'[\)\\"]', '', new_detokenized_sentence))
 
     def post_sentence():
-        consumer_key = 'aW8uG41Ufh7AbmwwLt1NepeRk'
-        consumer_secret = 'eYOQj0W2b0iKJXjCWUwI7CxcNnzFDf5NaMHrSZHBZ6ChfdfQjU'
-        access_token = '1309924410363703296-CsYCLirzx4gYfJtc6QMo85I1JfA2m3'
-        access_token_secret = 'dYwyxOHmmaZW8XUYPP4SB5mXlw9jznpAr9aw1OT2VIPj2'
+        consumer_key = os.getenv('consumer_key')
+        consumer_secret = os.getenv('consumer_secret')
+        access_token = os.getenv('access_token')
+        access_token_secret = os.getenv('access_token_secret')
 
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
