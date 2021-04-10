@@ -1,10 +1,12 @@
-from flask import Flask, render_template, send_file, request
 import requests
 from datetime import datetime
 from io import BytesIO
+from base64 import b64encode
+import os
+
+from flask import Flask, render_template, send_file, request
 import matplotlib.pyplot as plt
 import matplotlib
-from base64 import b64encode
 import smtplib
 from email.message import EmailMessage
 import tweepy
@@ -14,14 +16,13 @@ from nltk.corpus import brown
 import numpy as np
 from nltk.tokenize.treebank import TreebankWordDetokenizer
 import re
+from dotenv import load_dotenv
+load_dotenv()
 
-from matplotlib import rcParams
 from pip._internal.vcs import git
 
 matplotlib.use('Agg')
-#rcParams.update({'figure.autolayout': True})
 
-"""TEST :) :) :) :) :)"""
 
 def get_revision_timestamps(TITLE):
     # base URL for API call
@@ -94,6 +95,7 @@ def get_revision_timestamps(TITLE):
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+
 @app.route('/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
@@ -103,7 +105,6 @@ def webhook():
         return ('Updated PythonAnywhere successfully', 200)
     else:
         return ('Wrong event type', 400)
-
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -121,14 +122,14 @@ def formresponse():
     email = request.form.get('email')
     message = request.form.get('message')
 
-    gmail_user = 'talzakendev@gmail.com'
-    gmail_password = 'Ethiopiaharrar1!'
+    gmail_user = os.getenv('gmail_user')
+    gmail_password = os.getenv('gmail_password')
 
     msg = EmailMessage()
 
     sent_from = 'you@gmail.com'
     to = ['talzaken@gmail.com']
-    subject = 'Message From Talzaken.com'
+    subject = 'Message From talzaken.pythonanywhere.com'
     body = message
 
     email_text = f"""
