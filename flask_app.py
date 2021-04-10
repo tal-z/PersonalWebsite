@@ -18,6 +18,8 @@ from matplotlib import rcParams
 matplotlib.use('Agg')
 #rcParams.update({'figure.autolayout': True})
 
+"""TEST!!!!"""
+
 def get_revision_timestamps(TITLE):
     # base URL for API call
     BASE_URL = "http://en.wikipedia.org/w/api.php"
