@@ -1,13 +1,8 @@
-from datetime import datetime
-from io import BytesIO
-from base64 import b64encode
 import os
 import hmac
 import hashlib
 
 from flask import Flask, render_template, send_file, request
-import matplotlib.pyplot as plt
-import matplotlib
 import smtplib
 from email.message import EmailMessage
 import tweepy
@@ -25,7 +20,6 @@ except:
     from pip._internal.vcs import git
 
 
-matplotlib.use('Agg')
 
 """  :)  """
 
@@ -220,6 +214,11 @@ def bot_write():
 @app.route('/wikipedia')
 def wikipedia():
     return render_template('wikipedia.html')
+
+@app.route('/mapping')
+def mapping():
+    return render_template('mapping.html')
+
 
 
 if __name__ == "__main__":
