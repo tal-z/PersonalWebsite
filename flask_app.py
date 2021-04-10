@@ -21,7 +21,7 @@ from pip._internal.vcs import git
 matplotlib.use('Agg')
 #rcParams.update({'figure.autolayout': True})
 
-"""TEST!!!!!!"""
+"""TEST :)"""
 
 def get_revision_timestamps(TITLE):
     # base URL for API call
@@ -94,7 +94,7 @@ def get_revision_timestamps(TITLE):
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-@app.route('update_server', methods=['POST'])
+@app.route('/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
         repo = git.Repo('https://github.com/tal-z/PersonalWebsite')
