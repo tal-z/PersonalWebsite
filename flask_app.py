@@ -97,7 +97,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 @app.route('/update_server', methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        repo = git.Repo('https://github.com/tal-z/PersonalWebsite')
+        repo = git.Repo('mysite/PersonalWebsite')
         origin = repo.remotes.origin
         origin.pull()
         return ('Updated PythonAnywhere successfully', 200)
