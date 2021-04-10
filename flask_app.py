@@ -20,16 +20,15 @@ from nltk.tokenize.treebank import TreebankWordDetokenizer
 import re
 from dotenv import load_dotenv
 load_dotenv()
-
-from pip._internal.vcs import git
 try:
     import git
 except:
-    pass
+    from pip._internal.vcs import git
+
 
 matplotlib.use('Agg')
 
-"""TEST!!!!"""
+"""TEST!!!!
 
 def get_revision_timestamps(TITLE):
     # base URL for API call
