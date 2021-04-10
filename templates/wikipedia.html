@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=400, initial-scale=.5">
-    <title>Watch Tal make coffee.</title>
-<style>
+    <style>
 
 
 
 
     body {
-        margin:0;
         padding:0;
+        margin:0;
         background-color: white;
         background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2f/Lightbulb_mark.svg');
         background-repeat: no-repeat;
@@ -19,30 +18,30 @@
         background-attachment: fixed;
     }
 
-    div.coffee {
+    div.about {
         position: absolute;
         padding-top: 5%;
         padding-left: 170px;
-        height:90%;
         font-family: "Lucida Console", "Courier New", monospace;
         width: 400px;
         background-color: rgba(255,255,255,0.95);
-        height: auto;
-        height: 100%;
+        display: block;
+        overflow: auto;
     }
 
-    iframe {
-    position:center;
-    padding-left:10px;
-    }
-
-    p.coffee {
+    p.about {
         font-family: "Lucida Console", "Courier New", monospace;
         color:green;
         font-size:50px;
         bottom:0px;
      }
 
+    text.about {
+        float: left;
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size:28px;
+        width: 380px;
+     }
 
 
 
@@ -84,6 +83,7 @@
 
 
 </style>
+    <title>Exploring Wikipedia</title>
 
 </head>
 <body>
@@ -97,18 +97,18 @@
   <a href="/resume" target="_blank">Resume</a>
 </div>
 
-    <div class="coffee" style="height:100%">
-        <p class="coffee">
-            <text></text>
-            <text>Watch me make coffee.</text><br>
-         </p>
-         <br>
-        <iframe  width="180" height="320" src="https://www.youtube.com/embed/r10m3uEJEnU?end=26&autoplay=1&mute=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="180" height="320" src="https://www.youtube.com/embed/vh7Ztu0G4Tc?end=26&autoplay=1&mute=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <br>
-
+    <div class="about">
+        <p class="about">
+            <text>Wikipedia Projects.</text>
+        </p>
+        <text class="about">
+            <ul>
+                <li><a href="/PlotWikiRevisions">WikiTools</a><small><br>Eventually, this will be a landing page for user tools to aid Wikipedia literacy. Right now, the above link redirects to the first tool in the toolkit, which is a widget to plot the revisions to a given Wikipedia page over time.</small></li>
+                <br>
+                <li><a href="https://towardsdatascience.com/liberating-knowledge-from-the-free-encyclopedia-af8c8dbdb751?source=email-57c57f709780-1597102838365-layerCake.autoLayerCakeWriterNotification-------------------------97993e93_c4f2_4564_a4b8_404f64f338e2&sk=d2c164db218d2a63da4415b83b2c24b2" target="_blank">Politics, Python, and Wikipedia</a><small><br>A piece I wrote for the blog "Towards Data Science," which explores claims made about using Wikipedia as an indicator for political futures in the 2020 US Vice Presidential Election.</small></li>
+            </ul>
+        </text>
     </div>
-
 
 </body>
 
