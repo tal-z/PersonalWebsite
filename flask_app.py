@@ -28,7 +28,7 @@ except:
 
 matplotlib.use('Agg')
 
-"""asdasd"""
+"""jkh"""
 
 def get_revision_timestamps(TITLE):
     # base URL for API call
@@ -121,7 +121,7 @@ def webhook():
             origin.pull()
             return ('Updated PythonAnywhere successfully', 200)
         else:
-            return ('Wrong event type', 400)
+            return ('Signature not validated', 400)
     else:
         return ('Wrong event type', 400)
 
