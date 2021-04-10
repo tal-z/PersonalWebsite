@@ -22,6 +22,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from pip._internal.vcs import git
+try:
+    import git
+except:
+    pass
 
 matplotlib.use('Agg')
 
