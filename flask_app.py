@@ -219,6 +219,9 @@ def wikipedia():
 def mapping():
     return render_template('mapping.html')
 
+@app.route('/mapping/DOEArt')
+def DOEArt():
+    return render_template('DOEArt.html')
 
 
 if __name__ == "__main__":
