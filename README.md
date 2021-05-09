@@ -5,3 +5,5 @@ This repo powers my personal website. Pushes to this repo are picked up by the w
 Built with flask.
 
 Photos in static folder are free and available for use with attribution.
+
+Test from new IDE
