@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}T-Minus MBTA{% endblock title %}
+{% block header %}T-Minus MBTA{% endblock header %}
+{% block content %}
+    <text class="content"><a href="https://tminusmbta.herokuapp.com/" target="_blank">T-Minus MBTA</a> is a platform that lets users build a dashboard of countdown timers for stations of interest within the MBTA system.</text>
+    <a href="https://tminusmbta.herokuapp.com/" target="_blank"><img class="content" src="{{ url_for('static',filename='tMinusMbta.PNG') }}"></a>
+{% endblock content %}
