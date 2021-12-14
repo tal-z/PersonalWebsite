@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=400, initial-scale=.5">
+    <title>
+        Tal Zaken | {% block title%}Placeholder Title{% endblock title%}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <style>{% block extrastyle %}{% endblock extrastyle %}</style>
+</head>
+<body>
+<div class="sidenav">
+  <a href="/">Tal Zaken</a>
+  <a href="/about">About</a>
+  <a href="https://github.com/tal-z/" target="_blank">GitHub</a>
+  <a href="https://www.linkedin.com/in/tal-zaken/" target="_blank">LinkedIn</a>
+  <a href="/resume" target="_blank">Resume</a>
+</div>
+
+{% block main %}
+<div class="main">
+    <p class="header">
+        <text>
+            {% block header %}
+                Placeholder Header
+            {% endblock header %}
+        </text>
+    </p>
+        {% block content %}
+            <text class="content">Placeholder Content</text>
+        {% endblock content %}
+</div>
+{% endblock main %}
+</body>
+</html>
+<script>
+    {% block script %}{% endblock script %}
+</script>

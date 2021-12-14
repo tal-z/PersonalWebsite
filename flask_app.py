@@ -224,5 +224,10 @@ def DOEArt():
     return render_template('DOEArt.html')
 
 
+@app.route('/tMinusMbta')
+def tMinusMbta():
+    return render_template('tMinusMbta.html')
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
