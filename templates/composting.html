@@ -20,13 +20,14 @@
       padding: 0 18px;
       display: none;
       overflow: hidden;
+      background-color: rgba(255,255,255,1);
     }
 {% endblock extrastyle %}
 {% block title %}Composting{% endblock title %}
 {% block header %}My Composting Work{% endblock header %}
 {% block content %}
     <button type="button" class="collapsible" onclick="expand('nyc_smart_compost')">
-        <text class="content"><small>NYC Smart Compost</small></text>
+        <text class="content"><small>+ NYC Smart Compost</small></text>
     </button>
         <div class="collapsible_content" id="nyc_smart_compost">
             <small>
@@ -58,7 +59,7 @@
             </small>
         </div>
     <button type="button" class="collapsible" onclick="expand('drop_off_compost')">
-        <text class="content"><small>Drop-off/Public Space Composting</small></text>
+        <text class="content"><small>+ Drop-off/Public Space Composting</small></text>
     </button>
         <div class="collapsible_content" id="drop_off_compost">
             <small>
@@ -88,7 +89,7 @@
             </small>
         </div>
     <button type="button" class="collapsible" onclick="expand('apt_bldg_compost')">
-        <text class="content"><small>NYC Apartment Building Composting</small></text>
+        <text class="content"><small>+ NYC Apartment Building Composting</small></text>
     </button>
         <div class="collapsible_content" id="apt_bldg_compost">
             <small>
@@ -113,7 +114,7 @@
             </small>
         </div>
     <button type="button" class="collapsible" onclick="expand('nyc_compost_project')">
-        <text class="content"><small>NYC Compost Project</small></text>
+        <text class="content"><small>+ NYC Compost Project</small></text>
     </button>
         <div class="collapsible_content" id="nyc_compost_project">
             <small>
@@ -138,17 +139,26 @@
         </div>
 {% endblock content %}
 {% block script %}
+    function collapse_all() {
+        let collapsables = document.getElementsByClassName('collapsible_content');
+        for (var i = 0; i < collapsables.length; ++i) {
+            let item = collapsables[i];
+            item.style.display = "none";
+            item.previousElementSibling.classList.remove("active")
+        }
+    }
+
     function expand(id) {
         let content = document.getElementById(id);
         let btn = content.previousElementSibling;
         if (content.style.display === "block") {
-          content.style.display = "none";
+            content.style.display = "none";
             btn.classList.toggle("active");
-
         }
         else {
-          content.style.display = "block";
-          btn.classList.toggle("active");
+            collapse_all();
+            content.style.display = "block";
+            btn.classList.toggle("active");
         }
     }
 {% endblock script %}
