@@ -1,13 +1,38 @@
 {% extends 'base.html' %}
+{% block extrastyle %}
+    .collapsible {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #ccc;
+    }
+
+    .collapsible_content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: rgba(255,255,255,1);
+    }
+{% endblock extrastyle %}
 {% block title %}Mapping{% endblock title %}
 {% block header %}Maps I've Made{% endblock header %}
 {% block content %}
-        <text class="content">
+    <button type="button" class="collapsible" onclick="expand('doe_art')">
+        <text class="content">Art in DOE Buildings Interactive Map</text>
+    </button>
+        <div class="collapsible_content" id="doe_art">
             <a href="/mapping/DOEArt" target="_blank">
-                Art in DOE Buildings Interactive Map
                 <img style="max-width:100%; max-height:100%;" src="static/maps/DOEArtFrame.PNG">
             </a>
-        </text>
             <small>
                 <br>
                 A Leaflet.js map built with Folium, which shows the locations of artwork in DOE buildings.
@@ -15,39 +40,74 @@
             </small>
             <br>
             <br>
-        <text class="content">
-            <a href="https://github.com/tal-z/NYCPopulationLocationOptimization/tree/master/V3">NYC Residential Heatmap
+        </div>
+    <button type="button" class="collapsible" onclick="expand('nyc_heatmap')">
+        <text class="content">NYC Residential <br>Heatmap</text>
+    </button>
+        <div class="collapsible_content" id="nyc_heatmap">
+            <a href="https://github.com/tal-z/NYCPopulationLocationOptimization/tree/master/V3">
                 <img style="max-width:100%; max-height:100%;" src="https://raw.githubusercontent.com/tal-z/NYCPopulationLocationOptimization/master/V3/imageFiles/ManhattanIntersectionHeatmap.png">
             </a>
-        </text>
             <small><br>A map that shows the density of residential units within a half-mile's walking distance of every intersection in Manhattan. Made possible with the help of Python libraries: OSMNx, NetworkX, iGraph, MatPlotLib, GeoPandas, and SodaPy.</small>
             <br>
             <br>
-        <text class="content">
-            <a href="https://github.com/tal-z/NYCPopulationLocationOptimization/tree/master/V1">Manhattan Residential Population Service Location Optimizer</a>
+        </div>
+    <button type="button" class="collapsible" onclick="expand('location_optimizer')">
+        <text class="content">Manhattan Residential Population Service Location Optimizer</text>
+    </button>
+        <div class="collapsible_content" id="location_optimizer">
+            <a href="https://github.com/tal-z/NYCPopulationLocationOptimization/tree/master/V1"></a>
                 <video width="100%" height="auto" controls="controls">
                     <source src="/static/mp4/ManhattanLocalAnimation_cmpr.mp4" type="video/mp4">
                 </video>
-        </text>
             <small>Question:  What is the minimum number of sites needed in order to place a site within a half-mile's walking distance of every Manhattan resident? A GitHub repo which houses my scripts that attempt to answer this question, and a video that simulates the end-result.</small>
             <br>
             <br>
-        <text class="content">
+        </div>
+    <button type="button" class="collapsible" onclick="expand('isochrone_map')">
+        <text class="content">NYC Isochrone Maps</text>
+    </button>
+        <div class="collapsible_content" id="isochrone_map">
             <a href="https://github.com/tal-z/NYCOpenDataIsochrones">
-                NYC Isochrone Maps
                 <img style="max-width:100%; max-height:100%;" src="https://raw.githubusercontent.com/tal-z/NYCOpenDataIsochrones/master/WalkToFSDOs_2021-04-05%2015%3A54%3A12.924849.png">
             </a>
-        </text>
             <small><br>A GitHub repo that holds files to produce isochrone (equal walking time) maps of various location-based resources around NYC, using datasets available via NYC Open Data and NYC Dept. of City Planning.</small>
             <br>
             <br>
-        <text class="content">
+        </div>
+    <button type="button" class="collapsible" onclick="expand('potholes_map')">
+        <text class="content">NYC Potholes Map</text>
+    </button>
+        <div class="collapsible_content" id="potholes_map">
             <a href="https://github.com/tal-z/NYCPotHoles" target="_blank">
-                NYC Potholes Map
                 <img style="max-width:100%; max-height:100%;" src="https://raw.githubusercontent.com/tal-z/NYCPotHoles/master/NYCPotholeMap.png">
             </a>
-        </text>
             <small><br>A GitHub repo that contains a script for generating choropleth maps of average time to repair potholes across NYC.</small>
             <br>
             <br>
+        </div>
 {% endblock content %}
+{% block script %}
+    function collapse_all() {
+        let collapsables = document.getElementsByClassName('collapsible_content');
+        for (var i = 0; i < collapsables.length; ++i) {
+            let item = collapsables[i];
+            item.style.display = "none";
+            item.previousElementSibling.classList.remove("active")
+        }
+    }
+
+    function expand(id) {
+        let content = document.getElementById(id);
+        let btn = content.previousElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            btn.classList.toggle("active");
+        }
+        else {
+            collapse_all();
+            content.style.display = "block";
+            btn.classList.toggle("active");
+        }
+    }
+{% endblock script %}
