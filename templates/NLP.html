@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -98,22 +98,23 @@
   <a href="https://github.com/tal-z/" target="_blank">GitHub</a>
   <a href="https://www.linkedin.com/in/tal-zaken/" target="_blank">LinkedIn</a>
   <a href="/resume" target="_blank">Resume</a>
-</div>
-
-    <div class="about">
-        <p class="about">
-            <text>Natural Language Processing Projects.</text>
-        </p>
-        <text class="about">
-            <ul>
-                <li><a href="https://github.com/tal-z/SoundsLike">SoundsLike</a><small><br>A python package for finding words by sound.</small></li>
-                <br>
-                <li><a href="/writerbot">WriterBot</a><small><br>A web-controlled twitter bot that poorly imitates random authors.</small></li>
-            </ul>
-        </text>
-    </div>
-
-</body>
-
-
-</html>
+</div-->
+{% extends 'base.html' %}
+{% block title %}NLP{% endblock title %}
+{% block header %}Natural Language Processing Projects{% endblock header %}
+{% block content %}
+    <text class="content">
+        <a href="https://github.com/tal-z/SoundsLike">
+            SoundsLike
+        </a>
+    </text>
+    A python package for finding words by sound.
+        <br><br>
+    <text class="content">
+        <a href="/writerbot">
+            WriterBot
+        </a>
+    </text>
+    A web-controlled twitter bot that poorly imitates random authors.
+    </text>
+{% endblock content %}
