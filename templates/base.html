@@ -19,18 +19,21 @@
 </div>
 
 {% block main %}
-<div class="main">
-    <p class="header">
-        <text>
-            {% block header %}
-                Placeholder Header
-            {% endblock header %}
-        </text>
-    </p>
-        {% block content %}
-            <text class="content">Placeholder Content</text>
-        {% endblock content %}
-</div>
+<div class="main_wrapper">
+    <div class="main">
+        <p class="header">
+            <text>
+                {% block header %}
+                    Placeholder Header
+                {% endblock header %}
+            </text>
+        </p>
+            {% block content %}
+                <text class="content">Placeholder Content</text>
+            {% endblock content %}
+    </div>
+    <div class="right_blur"></div>
+    </div>
 {% endblock main %}
 </body>
 </html>

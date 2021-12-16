@@ -8,15 +8,32 @@ body {
         background-attachment: fixed;
     }
 
-    div.main {
+    div.main_wrapper {
+        overflow:auto;
         position: absolute;
+
+    }
+
+    div.main {
+        float: left;
         padding-top: 5%;
         padding-left: 50px;
         height:90%;
         font-family: "Lucida Console", "Courier New", monospace;
         width: 400px;
-        background-color: rgba(255,255,255,0.95);
+        background-color: rgba(255,255,255,.95);
         height: 100vh;
+    }
+
+    div.right_blur {
+        float: right;
+        background-image: linear-gradient(to right,
+            rgba(255, 255, 255, .94),
+            rgba(255, 255, 255, 0)
+        100%);
+        width:100px;
+        height: 100vh;
+        top:0;
     }
 
     p.header {
