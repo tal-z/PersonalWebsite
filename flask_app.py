@@ -229,5 +229,11 @@ def tMinusMbta():
     return render_template('tMinusMbta.html')
 
 
+
+@app.route('/digital_art')
+def digital_art():
+    return render_template('digitalart.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
