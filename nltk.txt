@@ -1,3 +1,4 @@
 brown
 gutenberg
 punkt
+averaged_perceptron_tagger
