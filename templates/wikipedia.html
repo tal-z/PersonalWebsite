@@ -3,25 +3,36 @@
 {% block header %}Wikipedia Projects{% endblock header %}
 {% block content %}
     <text class="content">
+        <a href="https://github.com/tal-z/WikiFilms" target="_blank">
+            WikiFilms
+        </a>
+    </text>
+    <small>
+        <p>WikiFilms is a webapp that displays a streaming animation of all the edits to a given Wikipedia page.
+        It is an art project that allows viewers to see the organic growth of Wikipedia articles over time.
+        For a desktop version, please see <a href="https://github.com/tal-z/WikiFlix" target="_blank">WikiFlix</a>!
+            WikiFlix does basically the same thing, but runs in a MatPlotLib event loop on your desktop.</p>
+        <p>Neither WikiFilms nor WikiFlix store any image data locally or on any server.
+            The pixel data is piped straight to your monitor for display!</p>
+    </small>
+    <text class="content">
         <a href="http://wikitools.pythonanywhere.com/PlotWikiRevisions_JINJA">
             WikiTools
         </a>
     </text>
     <small>
-        WikiTools is a webapp that provides tools to help develop Wikipedia literacy.
+        <p>WikiTools is a webapp that provides tools to help develop Wikipedia literacy.
         WikiTools is very much a work in progress, and therefore has many bugs and limited functionality.
         At present, it provides tools for searching all revisions over time as well as by editor.
-        The link to pass data between these two functions is broken, however.
+            The link to pass data between these two functions is broken, however.</p>
     </small>
-    <br><br>
     <text class="content">
         <a href="https://towardsdatascience.com/liberating-knowledge-from-the-free-encyclopedia-af8c8dbdb751?source=email-57c57f709780-1597102838365-layerCake.autoLayerCakeWriterNotification-------------------------97993e93_c4f2_4564_a4b8_404f64f338e2&sk=d2c164db218d2a63da4415b83b2c24b2" target="_blank">
             Politics, Python, and Wikipedia
         </a>
     </text>
-        <small>
-            A piece I wrote for the blog "Towards Data Science," which explores claims made about using Wikipedia
-            as an indicator for political futures in the 2020 US Vice Presidential Election.
-        </small>
-    </text>
+    <small>
+        <p>A piece I wrote for the blog "Towards Data Science," which explores claims made about using Wikipedia
+            as an indicator for political futures in the 2020 US Vice Presidential Election.</p>
+    </small>
 {% endblock content %}
