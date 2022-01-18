@@ -1,6 +1,6 @@
 # PersonalWebsite
 This repo powers my personal website. Pushes to this repo are picked up by the website's server, and automatically displayed live.
-## https://talzaken.pythonanywhere.com
+## http://www.talzaken.com
 
 Built with flask.
 
